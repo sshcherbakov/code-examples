@@ -1,10 +1,13 @@
 package net.shcherbakovs.code.examples;
 
-import org.joda.time.DateTime;
-
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
+/**
+ * Simple Least Recently Used cache implementation
+ * @param <K>
+ * @param <V>
+ */
 public class LRUCache<K, V> {
 
 	class Mark implements Comparable<Mark> {

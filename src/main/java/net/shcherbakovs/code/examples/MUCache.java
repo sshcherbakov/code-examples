@@ -3,7 +3,12 @@ package net.shcherbakovs.code.examples;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
-public class MRUCache<K, V> {
+/**
+ * Most Used cache implementation
+ * @param <K>
+ * @param <V>
+ */
+public class MUCache<K, V> {
 
 	class Mark implements Comparable<Mark> {
 		private final Long count;
@@ -24,10 +29,10 @@ public class MRUCache<K, V> {
 
 		@Override
 		public boolean equals(Object m) {
-			if(!(m instanceof MRUCache.Mark)) {
+			if(!(m instanceof MUCache.Mark)) {
 				return false;
 			}
-			return this.key.equals(((MRUCache.Mark) m).key);
+			return this.key.equals(((MUCache.Mark) m).key);
 		}
 	}
 
@@ -36,7 +41,7 @@ public class MRUCache<K, V> {
 	private final HashMap<K, Long> counts;
 	private final int size;
 
-	public MRUCache(int size) {
+	public MUCache(int size) {
 		this.size = size;
 		this.storage = new HashMap<>(size);
 		this.pq = new PriorityQueue<>();

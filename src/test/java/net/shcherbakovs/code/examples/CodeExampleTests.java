@@ -7,18 +7,18 @@ import static org.junit.Assert.*;
 public class CodeExampleTests {
 
 	@Test
-	public void testMRU() {
-		MRUCache<String, String> mruCache = new MRUCache<>(2);
-		mruCache.put("key1", "value1");
-		mruCache.get("key1");
-		mruCache.put("key2", "value2");
-		mruCache.put("key3", "value3");
-		mruCache.get("key3");
-		mruCache.put("key1", "value11");
+	public void testMU() {
+		MUCache<String, String> MUCache = new MUCache<>(2);
+		MUCache.put("key1", "value1");
+		MUCache.get("key1");
+		MUCache.put("key2", "value2");
+		MUCache.put("key3", "value3");
+		MUCache.get("key3");
+		MUCache.put("key1", "value11");
 
-		assertEquals("value3", mruCache.get("key3"));
-		assertEquals("value11", mruCache.get("key1"));
-		assertNull(mruCache.get("key2"));
+		assertEquals("value3", MUCache.get("key3"));
+		assertEquals("value11", MUCache.get("key1"));
+		assertNull(MUCache.get("key2"));
 
 	}
 
