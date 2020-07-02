@@ -8,6 +8,10 @@ import java.awt.*;
 
 public class Questions {
 
+	/**
+	 * @param sample - string
+	 * @return - true if the string contains all unique characters
+	 */
 	public static boolean allUniqueChars(String sample) {
 		int[] counts = new int[128];
 		for(char c : sample.toCharArray()) {
@@ -19,6 +23,11 @@ public class Questions {
 		return true;
 	}
 
+	/**
+	 * @param sample1 - first string
+	 * @param sample2 - second string
+	 * @return - true if strings are permutations of each other
+	 */
 	public static boolean onePermutationOfAnother(String sample1, String sample2) {
 		if(sample1.length() != sample2.length()) {
 			return false;
@@ -44,6 +53,14 @@ public class Questions {
 		private float y;
 	}
 
+	/**
+	 * Returns point of intersection of two lines defined by two points each
+	 * @param p1 - first point on the first line
+	 * @param p2 - second point on the first line
+	 * @param q1 - first point on the second line
+	 * @param q2 - second point on the second line
+	 * @return
+	 */
 	public static Point intersection(Point p1, Point p2, Point q1, Point q2) {
 		if(p1.x == p2.x || q1.x == q2.x) {
 			return null;
